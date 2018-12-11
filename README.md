@@ -46,17 +46,15 @@ parameters, we tested using a decision tree, Gaussian Naive Bayes, K Nearest Nei
 logistic regression. 
 
 ## Testing and Training
-10 CV Validation: We performed 10-fold cross validation to determine what is the best model to represent and classify our data. From our testing of the five models, the average test accuracy across the ten folds was 0.9996 for KNN, 0.9998 for Gaussian Naive Bayes, 0.2477 for linear regression, 0.9998 for decision tree, and 0.1378 for logistic regression. From these tests, we determined Gaussian Naive Bayes is the best model for our data.
-Varying test set size: After deciding on the best model to classify our data, we wanted to determine the best split between the amount of testing and training data. We varied the test set size from 5% to 40% of the total data, testing the accuracy every 1%.
-
-To test various models and determine what is the best model to represent and classify our data, we loaded our data into Weka and used 10-fold cross validation to test the models decision tree, K Nearest Neighbor, Naive Bayes, linear regression, and Multilayer Perceptron. For each attribute, we modified the values and studied the distribution for the normal attribute values, the square of the values, and the natural log of the values. The modification of the attributes and classification are shown and described in the figures below.
+To test various models and determine what is the best model to represent and classify our data, we loaded our data into Weka and used 10-fold cross validation to test the models decision tree, K Nearest Neighbor, Naive Bayes, linear regression, and Multilayer Perceptron. For each attribute, we modified the values and studied the distribution for the normal attribute values, the square of the values, and the natural log of the values. We wanted to choose the modification of the attribute values that would be most descriptive and have a higher impact on the resulting classification. As a result, for our final tests we chose values where the distribution was close to normal or even. The chosen modification of the attributes and classification are shown and described in the figures below.
 
 ### Popularity
 Since the popularity values are numeric and continuous and Weka takes categorical, discrete classifications, we divided the popularity values into five discrete groups. Level one songs had a popularity of 0 to 25, level two 25 to 35, level three 35 to 45, level four 45 to 60, and level five 60 and above. We chose this distribution because it seemed to produce a more even distribution across all groups. Level five has a wider range of popularity values than the other groups because there are less songs that have a popularity of 60 and above.
-![Image](attribute_distribution_images/popularity.png)
+![Image](attribute_distribution_images/popularity_in_order.png)
 Figure 1: Popularity Distribution 
 
 ### Danceability
+For the danceability attribute, we used the unmodified values since its distribution was the closest to a normal distribution. 
 ![Image](attribute_distribution_images/danceability.png)
 Figure 2: Distribution of Danceability Values (unmodified)
 
@@ -66,6 +64,123 @@ Figure 3: Distribution of Danceability Values (natural log)
 ![Image](attribute_distribution_images/danceability^2.png)
 Figure 4: Distribution of Danceability Values (squared)
 
+### Energy 
+We used the square of the original values for the energy attribute since they were the closest to an even distribution. 
+![Image](attribute_distribution_images/energy.png)
+Figure 5: Distribution of Energy Values (unmodified)
+
+![Image](attribute_distribution_images/ln(energy).png)
+Figure 6: Distribution of Energy Values (natural log)
+
+![Image](attribute_distribution_images/energy^2.png)
+Figure 7: Distribution of Energy Values (squared)
+
+### Speechiness 
+We used the natural log of the original values for the speechiness attribute since they had the widest range of values. 
+![Image](attribute_distribution_images/speechiness.png)
+Figure 8: Distribution of Speechiness Values (unmodified)
+
+![Image](attribute_distribution_images/ln(speechiness).png)
+Figure 9: Distribution of Speechiness Values (natural log)
+
+![Image](attribute_distribution_images/speechiness^2.png)
+Figure 10: Distribution of Speechiness Values (squared)
+
+### Loudness 
+For the loudness attribute, we used the natural log of the original values since they were the closest to a normal distribution. 
+![Image](attribute_distribution_images/loudness.png)
+Figure 11: Distribution of Loudness Values (unmodified)
+
+![Image](attribute_distribution_images/ln(loudness).png)
+Figure 12: Distribution of Loudness Values (natural log)
+
+![Image](attribute_distribution_images/loudness^2.png)
+Figure 13: Distribution of Loudness Values (squared)
+
+
+### Acousticness 
+For the acousticness attribute, we used the natural log of the original values since they had the widest range of values. 
+![Image](attribute_distribution_images/acousticness.png)
+Figure 14: Distribution of Acousticness Values (unmodified)
+
+![Image](attribute_distribution_images/ln(acousticness).png)
+Figure 15: Distribution of Acousticness Values (natural log)
+
+![Image](attribute_distribution_images/acousticness^2.png)
+Figure 16: Distribution of Acousticness Values (squared)
+
+### Liveliness
+We used the natural log of the original values for the liveliness attribute since they had the widest range of values. 
+![Image](attribute_distribution_images/liveliness.png)
+Figure 17: Distribution of Liveliness Values (unmodified)
+
+![Image](attribute_distribution_images/ln(liveliness).png)
+Figure 18: Distribution of Liveliness Values (natural log)
+
+![Image](attribute_distribution_images/liveliness^2.png)
+Figure 19: Distribution of Liveliness Values (squared)
+
+### Valence
+We used the original values for the valence attribute since its distribution was the closest to normal. 
+![Image](attribute_distribution_images/valence.png)
+Figure 20: Distribution of Valence Values (unmodified)
+
+![Image](attribute_distribution_images/ln(valence).png)
+Figure 21: Distribution of Valence Values (natural log)
+
+![Image](attribute_distribution_images/valence^2.png)
+Figure 22: Distribution of Valence Values (squared)
+
+### Tempo 
+We used the original values for the tempo attribute since its distribution was the closest to normal and had the widest range of values. 
+![Image](attribute_distribution_images/tempo.png)
+Figure 23: Distribution of Tempo Values (unmodified)
+
+![Image](attribute_distribution_images/ln(tempo).png)
+Figure 24: Distribution of Tempo Values (natural log)
+
+![Image](attribute_distribution_images/tempo^2.png)
+Figure 25: Distribution of Tempo Values (squared)
+
+### Year 
+We used the original values for the year attribute since its distribution did not change when we modified the values. 
+![Image](attribute_distribution_images/year.png)
+Figure 26: Distribution of Year Values (unmodified)
+
+![Image](attribute_distribution_images/ln(year).png)
+Figure 27: Distribution of Year Values (natural log)
+
+![Image](attribute_distribution_images/year^2.png)
+Figure 28: Distribution of Year Values (squared)
+
+### Instrumentalness, Duration, and Time Signature
+We decided not to use the attributes instrumentalness, duration, and time signature because they did not have a normal or even distribution for any of the modifications, and we did not think these attributes contributed to the classification of the songs.
+![Image](attribute_distribution_images/instrumentalness.png)
+Figure 29: Distribution of Instrumentalness Values (unmodified)
+
+![Image](attribute_distribution_images/ln(instrumentalness).png)
+Figure 30: Distribution of Instrumentalness Values (natural log)
+
+![Image](attribute_distribution_images/instrumentalness^2.png)
+Figure 31: Distribution of Instrumentalness Values (squared)
+
+![Image](attribute_distribution_images/duration.png)
+Figure 32: Distribution of Duration Values (unmodified)
+
+![Image](attribute_distribution_images/ln(duration).png)
+Figure 33: Distribution of Duration Values (natural log)
+
+![Image](attribute_distribution_images/duration^2.png)
+Figure 34: Distribution of Duration Values (squared)
+
+![Image](attribute_distribution_images/time_signature.png)
+Figure 35: Distribution of Time Signature Values (unmodified)
+
+![Image](attribute_distribution_images/ln(time_signature).png)
+Figure 36: Distribution of Time Signature Values (natural log)
+
+![Image](attribute_distribution_images/time_signature^2.png)
+Figure 37: Distribution of Time Signature Values (squared)
 
 ## Results 
 
