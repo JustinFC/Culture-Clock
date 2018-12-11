@@ -42,8 +42,8 @@ understand what makes a song popular in our modern day culture.
 With songs and their traits in hand, we were able to generate our dataset and plug this into multiple 
 learners to determine how each algorithm fared with our data. Our dataset ultimately included numeric 
 inputs and resulted in a numeric output (a popularity value between 0 and 100). As such, with these 
-parameters, we tested using a decision tree, Gaussian Naive Bayes, K Nearest Neighbor, linear regression, and
-logistic regression. 
+parameters, we tested using a Decision Tree, Naive Bayes, K Nearest Neighbor, and
+Logistic Regression. 
 
 ## Testing and Training
 To test various models and determine what is the best model to represent and classify our data, we loaded our data into Weka and used 10-fold cross validation to test the models decision tree, K Nearest Neighbor, Naive Bayes, and logistic regression. For each attribute, we modified the values and studied the distribution for the normal attribute values, the square of the values, and the natural log of the values. We wanted to choose the modification of the attribute values that would be most descriptive and have a higher impact on the resulting classification. As a result, for our final tests we chose values where the distribution was close to normal or even. The chosen modification of the attributes and classification are shown and described in the figures below.
@@ -195,12 +195,13 @@ Besides simply transforming the individual attributes, we also tried kernel meth
 
 
 ## Final Report
+Our final report can be found [here](/Report.pdf)
 
 ## Team Contributions and Contact Information
 Justin Chen - justinchen2020@u.northwestern.edu
 - Learned how to use Spotify API to write Python script to connect Spotify API with Kenneth's web scraping code
 - Contributed to discussion, viability, and usage of various machine learning algorithms for this project
-- Created website
+- Created website and wrote final report
 
 Kenneth Gomez - kennethgomez2020@u.northwestern.edu 
 - Wrote Python script to web scrape songs for dataset and gathered dataset in the process
@@ -208,6 +209,6 @@ Kenneth Gomez - kennethgomez2020@u.northwestern.edu
 - Created logistics for dataset training and testing
 
 Leanna Hue - leannahue2020@u.northwestern.edu
-- Wrote Python code to implement dataset with machine learning algorithms from Scikit-learn
-- Generated graphs and final results using weka
+- Contributed to implementation of website
+- Generated graphs and final results using Weka
 - Contributed to discussion, viability, and usage of various machine learning algorithms for this project
