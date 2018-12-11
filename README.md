@@ -49,6 +49,13 @@ logistic regression.
 10 CV Validation: We performed 10-fold cross validation to determine what is the best model to represent and classify our data. From our testing of the five models, the average test accuracy across the ten folds was 0.9996 for KNN, 0.9998 for Gaussian Naive Bayes, 0.2477 for linear regression, 0.9998 for decision tree, and 0.1378 for logistic regression. From these tests, we determined Gaussian Naive Bayes is the best model for our data.
 Varying test set size: After deciding on the best model to classify our data, we wanted to determine the best split between the amount of testing and training data. We varied the test set size from 5% to 40% of the total data, testing the accuracy every 1%.
 
+To test various models and determine what is the best model to represent and classify our data, we loaded our data into Weka and used 10-fold cross validation to test the models decision tree, K Nearest Neighbor, Naive Bayes, linear regression, and Multilayer Perceptron. We modified the attributes and classification as described below.
+
+# Popularity
+Since the popularity values are numeric and continuous and Weka takes categorical, discrete classifications, we divided the popularity values into five discrete groups. Level one songs had a popularity of 0 to 25, level two 25 to 35, level three 35 to 45, level four 45 to 60, and level five 60 and above. We chose this distribution because it seemed to produce a more even distribution across all groups. Level five has a wider range of popularity values than the other groups.
+![Image](popularity.png)
+Figure 1: Popularity Distribution
+
 
 ## Results 
 
