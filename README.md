@@ -26,22 +26,33 @@ musically and culturally valued in our current society.
 To build our dataset, we first had to create a collection of songs because there currently isn’t a
 way to pull random songs from the Spotify API. In order to accomplish this, we scraped the
 website songfacts.com, which has a database of every song released sorted by year. So now we
-have a list of songs and their respective artist from 2008 - 2018, with 2000 songs per year for a
-total of 20,000 songs.
+have a list of songs and their respective artist from 2008 - 2018, with ~2000 songs per year for a
+total of ~20,000 songs.
 
 We are then able to work with the Spotify API to gather the statistics of each of these songs. The
 Spotify API, given a song, can provide a wide range of attributes about the song itself. For the
 purposes of this project, we are concerned with the following: duration, acousticness,
 danceability, energy, instrumentalness, liveness, loudness, speechiness, valence, tempo, and
-popularity. Spotify is able to provide numeric values for each of these attributes for each song,
-and with this, we plan to determine what traits are common in the most popular song and
-understand what makes a song popular.
+popularity. Spotify is able to provide numeric values for each of these attributes for each song (more 
+information can be found at https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/).
+With this, we plan to determine what traits are common in the most popular song and
+understand what makes a song popular in our modern day culture.
 
 ## Solution
+With songs and their traits in hand, we were able to generate our dataset and plug this into multiple 
+learners to determine how each algorithm fared with our data. Our dataset ultimately included numeric 
+inputs and resulted in a numeric output (a popularity value between 0 and 100). As sch, with these 
+parameters, we tested using a decision tree, Gaussian Naive Bayes, K Nearest Neighbor, linear regression, and
+logistic regression. 
 
 ## Testing and Training
+10 CV Validation: We performed 10-fold cross validation to determine what is the best model to represent and classify our data. From our testing of the five models, the average test accuracy across the ten folds was 0.9996 for KNN, 0.9998 for Gaussian Naive Bayes, 0.2477 for linear regression, 0.9998 for decision tree, and 0.1378 for logistic regression. From these tests, we determined Gaussian Naive Bayes is the best model for our data.
+Varying test set size: After deciding on the best model to classify our data, we wanted to determine the best split between the amount of testing and training data. We varied the test set size from 5% to 40% of the total data, testing the accuracy every 1%.
+
 
 ## Results 
+
+## Validation
 
 ## Final Report
 
@@ -54,14 +65,12 @@ Justin Chen - justinchen2020@u.northwestern.edu
 Kenneth Gomez - kennethgomez2020@u.northwestern.edu 
 - Wrote Python script to web scrape songs for dataset and gathered dataset in the process
 - Spearheaded discussion, viability, and usage of various machine learning algorithms for this project
-- Created logistics for using dataset for testing and training 
+- Created logistics for dataset training and testing
 
 Leanna Hue - leannahue2020@u.northwestern.edu
-- Wrote code to implement dataset with machine learning algorithms from Scikit-learn
+- Wrote Python code to implement dataset with machine learning algorithms from Scikit-learn
 - Generated graphs and final results using weka
 - Contributed to discussion, viability, and usage of various machine learning algorithms for this project
-
-
 
 
 ## Welcome to GitHub Pages
