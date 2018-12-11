@@ -50,7 +50,7 @@ To test various models and determine what is the best model to represent and cla
 
 ### Popularity
 Since the popularity values are numeric and continuous and Weka takes categorical, discrete classifications, we divided the popularity values into five discrete groups. Level one songs had a popularity of 0 to 25, level two 25 to 35, level three 35 to 45, level four 45 to 60, and level five 60 and above. We chose this distribution because it seemed to produce a more even distribution across all groups. Level five has a wider range of popularity values than the other groups because there are less songs that have a popularity of 60 and above.
-![Image](attribute_distribution_images/popularity_in_order.png)
+![Image](attribute_distribution_images/popularity_in_order.jpg)
 Figure 1: Popularity Distribution 
 
 ### Danceability
@@ -111,13 +111,13 @@ Figure 16: Distribution of Acousticness Values (squared)
 
 ### Liveliness
 We used the natural log of the original values for the liveliness attribute since they had the widest range of values. 
-![Image](attribute_distribution_images/liveliness.png)
+![Image](attribute_distribution_images/liveness.png)
 Figure 17: Distribution of Liveliness Values (unmodified)
 
-![Image](attribute_distribution_images/ln(liveliness).png)
+![Image](attribute_distribution_images/ln(liveness).png)
 Figure 18: Distribution of Liveliness Values (natural log)
 
-![Image](attribute_distribution_images/liveliness^2.png)
+![Image](attribute_distribution_images/liveness^2.png)
 Figure 19: Distribution of Liveliness Values (squared)
 
 ### Valence
@@ -164,13 +164,13 @@ Figure 30: Distribution of Instrumentalness Values (natural log)
 ![Image](attribute_distribution_images/instrumentalness^2.png)
 Figure 31: Distribution of Instrumentalness Values (squared)
 
-![Image](attribute_distribution_images/duration.png)
+![Image](attribute_distribution_images/duration_ms.png)
 Figure 32: Distribution of Duration Values (unmodified)
 
-![Image](attribute_distribution_images/ln(duration).png)
+![Image](attribute_distribution_images/ln(duration_ms).png)
 Figure 33: Distribution of Duration Values (natural log)
 
-![Image](attribute_distribution_images/duration^2.png)
+![Image](attribute_distribution_images/duration_ms^2.png)
 Figure 34: Distribution of Duration Values (squared)
 
 ![Image](attribute_distribution_images/time_signature.png)
