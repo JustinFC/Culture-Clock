@@ -183,8 +183,16 @@ Figure 36: Distribution of Time Signature Values (natural log)
 Figure 37: Distribution of Time Signature Values (squared)
 
 ## Results 
+We used 10-fold CV to evaluate our models. We compared the accuracy using various algorithms and the results are summarized below:
 
-## Validation
+![Image](results.png)
+Figure 38: Cross Validation results
+
+Surprisingly, the accuracy of our models decreased when we applied these transformations. The poor results in general aren’t too surprising. When you look at the distributions of all the attributes versus the popularity classifications, none of the attributes have a significant split. In each of the attributes, there’s an even amount of each kind of song across the range of values. This implies that there really isn’t a strong relationship between the attributes we selected and the popularity of the song, unfortunately. There are probably other factors in play. For example, if I release a song with a certain set of attributes, and Drake releases one with the identical set, Drake’s is definitely still going to be much more popular. This is because the popularity of the artist is a huge factor, and one that would have certainly helped this dataset.
+
+
+Besides simply transforming the individual attributes, we also tried kernel methods to further distinguish bad songs from good songs. The kernel classifier we found on Weka implemented kernel functions with logistic regression, however it only worked for binary attributes. We split the data in half, the bottom half representing unpopular songs and the upper half representing popular songs. We had to reduce the size of our dataset to 10,000 because Weka would crash if we put anymore. The results of this algorithm with 10-fold CV was 65.83%. This seemed really promising at first, but ZeroR was 63%, which means the model wasn’t accomplishing much. So, our conclusion remains the same.
+
 
 ## Final Report
 
