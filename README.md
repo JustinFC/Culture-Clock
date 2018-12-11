@@ -41,12 +41,12 @@ understand what makes a song popular in our modern day culture.
 ## Solution
 With songs and their traits in hand, we were able to generate our dataset and plug this into multiple 
 learners to determine how each algorithm fared with our data. Our dataset ultimately included numeric 
-inputs and resulted in a numeric output (a popularity value between 0 and 100). As sch, with these 
+inputs and resulted in a numeric output (a popularity value between 0 and 100). As such, with these 
 parameters, we tested using a decision tree, Gaussian Naive Bayes, K Nearest Neighbor, linear regression, and
 logistic regression. 
 
 ## Testing and Training
-To test various models and determine what is the best model to represent and classify our data, we loaded our data into Weka and used 10-fold cross validation to test the models decision tree, K Nearest Neighbor, Naive Bayes, linear regression, and Multilayer Perceptron. For each attribute, we modified the values and studied the distribution for the normal attribute values, the square of the values, and the natural log of the values. We wanted to choose the modification of the attribute values that would be most descriptive and have a higher impact on the resulting classification. As a result, for our final tests we chose values where the distribution was close to normal or even. The chosen modification of the attributes and classification are shown and described in the figures below.
+To test various models and determine what is the best model to represent and classify our data, we loaded our data into Weka and used 10-fold cross validation to test the models decision tree, K Nearest Neighbor, Naive Bayes, and logistic regression. For each attribute, we modified the values and studied the distribution for the normal attribute values, the square of the values, and the natural log of the values. We wanted to choose the modification of the attribute values that would be most descriptive and have a higher impact on the resulting classification. As a result, for our final tests we chose values where the distribution was close to normal or even. The chosen modification of the attributes and classification are shown and described in the figures below.
 
 ### Popularity
 Since the popularity values are numeric and continuous and Weka takes categorical, discrete classifications, we divided the popularity values into five discrete groups. Level one songs had a popularity of 0 to 25, level two 25 to 35, level three 35 to 45, level four 45 to 60, and level five 60 and above. We chose this distribution because it seemed to produce a more even distribution across all groups. Level five has a wider range of popularity values than the other groups because there are less songs that have a popularity of 60 and above.
